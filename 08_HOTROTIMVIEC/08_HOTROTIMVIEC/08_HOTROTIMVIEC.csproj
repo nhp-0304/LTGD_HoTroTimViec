@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8B53DEFA-2DD0-4E44-A795-C7171420B5A8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>_08_HOTROTIMVIEC</RootNamespace>
+    <AssemblyName>08_HOTROTIMVIEC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Spire.Barcode, Version=6.1.1.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Office.7.1.4\lib\net40\Spire.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.DataExport, Version=4.1.9.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Office.7.1.4\lib\net40\Spire.DataExport.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.DataExport.ResourceMgr, Version=2.1.0.0, Culture=neutral, PublicKeyToken=4bc1500157862925, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Office.7.1.4\lib\net40\Spire.DataExport.ResourceMgr.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Doc, Version=10.1.11.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Office.7.1.4\lib\net40\Spire.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.DocViewer.Forms, Version=7.1.1.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Office.7.1.4\lib\net40\Spire.DocViewer.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Email, Version=5.1.0.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Office.7.1.4\lib\net40\Spire.Email.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.4.0.40, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Office.7.1.4\lib\net40\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.OfficeViewer.Forms, Version=7.1.4.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Office.7.1.4\lib\net40\Spire.OfficeViewer.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=8.1.6.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Office.7.1.4\lib\net40\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.PdfViewer.Asp, Version=7.1.4.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Office.7.1.4\lib\net40\Spire.PdfViewer.Asp.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.PdfViewer.Forms, Version=7.1.4.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Office.7.1.4\lib\net40\Spire.PdfViewer.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Presentation, Version=7.1.4.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Office.7.1.4\lib\net40\Spire.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Spreadsheet, Version=6.1.3.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Office.7.1.4\lib\net40\Spire.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.XLS, Version=12.1.7.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Office.7.1.4\lib\net40\Spire.XLS.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUS\BUS_ADMINISTRATION.cs" />
+    <Compile Include="BUS\BUS_DONVITUYENDUNG.cs" />
+    <Compile Include="BUS\BUS_DONVITUYENDUNG_TAIKHOAN.cs" />
+    <Compile Include="BUS\BUS_DONVITUYENDUNG_VIECLAM.cs" />
+    <Compile Include="BUS\BUS_DON_TUYENDUNG.cs" />
+    <Compile Include="BUS\BUS_NGUOILAODONG.cs" />
+    <Compile Include="BUS\BUS_NGUOILAODONG_TAIKHOAN.cs" />
+    <Compile Include="BUS\BUS_SERVICES.cs" />
+    <Compile Include="BUS\BUS_VIECLAM.cs" />
+    <Compile Include="DAO\DAO_ADMINISTRATION.cs" />
+    <Compile Include="DAO\DAO_DONVITUYENDUNG.cs" />
+    <Compile Include="DAO\DAO_DONVITUYENDUNG_TAIKHOAN.cs" />
+    <Compile Include="DAO\DAO_DONVITUYENDUNG_VIECLAM.cs" />
+    <Compile Include="DAO\DAO_DON_TUYENDUNG.cs" />
+    <Compile Include="DAO\DAO_NGUOILAODONG.cs" />
+    <Compile Include="DAO\DAO_NGUOILAODONG_TAIKHOAN.cs" />
+    <Compile Include="DAO\DAO_SERVICES.cs" />
+    <Compile Include="DAO\DAO_VIECLAM.cs" />
+    <Compile Include="GUI\_ADMINISTRATION\MENU_ADMINISTRATION.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\_ADMINISTRATION\MENU_ADMINISTRATION.Designer.cs">
+      <DependentUpon>MENU_ADMINISTRATION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\MENU_DANHSACHCONGVIEC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\MENU_DANHSACHCONGVIEC.designer.cs">
+      <DependentUpon>MENU_DANHSACHCONGVIEC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\MENU_DONTUYENDUNG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\MENU_DONTUYENDUNG.designer.cs">
+      <DependentUpon>MENU_DONTUYENDUNG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\MENU_DONVITUYENDUNG_TAIKHOAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\MENU_DONVITUYENDUNG_TAIKHOAN.designer.cs">
+      <DependentUpon>MENU_DONVITUYENDUNG_TAIKHOAN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\MENU_DONVITUYENDUNG_VIECLAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\MENU_DONVITUYENDUNG_VIECLAM.designer.cs">
+      <DependentUpon>MENU_DONVITUYENDUNG_VIECLAM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\SUAAVTDONVITUYENDUNG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\SUAAVTDONVITUYENDUNG.designer.cs">
+      <DependentUpon>SUAAVTDONVITUYENDUNG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\SUAMAUTUYENDUNG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\SUAMAUTUYENDUNG.designer.cs">
+      <DependentUpon>SUAMAUTUYENDUNG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\SUAMAUVIECLAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\SUAMAUVIECLAM.designer.cs">
+      <DependentUpon>SUAMAUVIECLAM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\TAOMAUTUYENDUNG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\TAOMAUTUYENDUNG.designer.cs">
+      <DependentUpon>TAOMAUTUYENDUNG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\TAOMAUVIECLAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\TAOMAUVIECLAM.designer.cs">
+      <DependentUpon>TAOMAUVIECLAM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\USER_DONTUYENDUNG.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\_DONVITUYENDUNG\USER_DONTUYENDUNG.designer.cs">
+      <DependentUpon>USER_DONTUYENDUNG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_LOGIN\DANGKY_DONVITUYENDUNG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\_LOGIN\DANGKY_DONVITUYENDUNG.Designer.cs">
+      <DependentUpon>DANGKY_DONVITUYENDUNG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_LOGIN\DANGKY_NGUOILAODONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\_LOGIN\DANGKY_NGUOILAODONG.Designer.cs">
+      <DependentUpon>DANGKY_NGUOILAODONG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_LOGIN\LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\_LOGIN\LOGIN.Designer.cs">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_LOGIN\SELECT_DANGKY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\_LOGIN\SELECT_DANGKY.Designer.cs">
+      <DependentUpon>SELECT_DANGKY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_NGUOILAODONG\MENU_NGUOILAODONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\_NGUOILAODONG\MENU_NGUOILAODONG.Designer.cs">
+      <DependentUpon>MENU_NGUOILAODONG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_NGUOILAODONG\UC_DoiMatKhau.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\_NGUOILAODONG\UC_DoiMatKhau.Designer.cs">
+      <DependentUpon>UC_DoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_NGUOILAODONG\UC_QuanLyDon_CaNhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\_NGUOILAODONG\UC_QuanLyDon_CaNhan.Designer.cs">
+      <DependentUpon>UC_QuanLyDon_CaNhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_NGUOILAODONG\UC_ThongTinNLD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\_NGUOILAODONG\UC_ThongTinNLD.Designer.cs">
+      <DependentUpon>UC_ThongTinNLD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_NGUOILAODONG\UC_TrangChu_NLD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\_NGUOILAODONG\UC_TrangChu_NLD.Designer.cs">
+      <DependentUpon>UC_TrangChu_NLD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\_NGUOILAODONG\UC_XuHuongCongViec.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\_NGUOILAODONG\UC_XuHuongCongViec.Designer.cs">
+      <DependentUpon>UC_XuHuongCongViec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOTROTIMVIECDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HOTROTIMVIECDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HTTV.cs">
+      <DependentUpon>HTTV.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="HTTV.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HTTV.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="PRINT\PRINT_DONTD.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\_DONVITUYENDUNG\MENU_DANHSACHCONGVIEC.resx">
+      <DependentUpon>MENU_DANHSACHCONGVIEC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_DONVITUYENDUNG\MENU_DONTUYENDUNG.resx">
+      <DependentUpon>MENU_DONTUYENDUNG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_DONVITUYENDUNG\MENU_DONVITUYENDUNG_TAIKHOAN.resx">
+      <DependentUpon>MENU_DONVITUYENDUNG_TAIKHOAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_DONVITUYENDUNG\MENU_DONVITUYENDUNG_VIECLAM.resx">
+      <DependentUpon>MENU_DONVITUYENDUNG_VIECLAM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_DONVITUYENDUNG\SUAAVTDONVITUYENDUNG.resx">
+      <DependentUpon>SUAAVTDONVITUYENDUNG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_DONVITUYENDUNG\SUAMAUTUYENDUNG.resx">
+      <DependentUpon>SUAMAUTUYENDUNG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_DONVITUYENDUNG\SUAMAUVIECLAM.resx">
+      <DependentUpon>SUAMAUVIECLAM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_DONVITUYENDUNG\TAOMAUTUYENDUNG.resx">
+      <DependentUpon>TAOMAUTUYENDUNG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_DONVITUYENDUNG\TAOMAUVIECLAM.resx">
+      <DependentUpon>TAOMAUVIECLAM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_DONVITUYENDUNG\USER_DONTUYENDUNG.resx">
+      <DependentUpon>USER_DONTUYENDUNG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_LOGIN\DANGKY_DONVITUYENDUNG.resx">
+      <DependentUpon>DANGKY_DONVITUYENDUNG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_LOGIN\DANGKY_NGUOILAODONG.resx">
+      <DependentUpon>DANGKY_NGUOILAODONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_LOGIN\LOGIN.resx">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_LOGIN\SELECT_DANGKY.resx">
+      <DependentUpon>SELECT_DANGKY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_NGUOILAODONG\MENU_NGUOILAODONG.resx">
+      <DependentUpon>MENU_NGUOILAODONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_NGUOILAODONG\UC_DoiMatKhau.resx">
+      <DependentUpon>UC_DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_NGUOILAODONG\UC_QuanLyDon_CaNhan.resx">
+      <DependentUpon>UC_QuanLyDon_CaNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_NGUOILAODONG\UC_ThongTinNLD.resx">
+      <DependentUpon>UC_ThongTinNLD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_NGUOILAODONG\UC_TrangChu_NLD.resx">
+      <DependentUpon>UC_TrangChu_NLD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\_NGUOILAODONG\UC_XuHuongCongViec.resx">
+      <DependentUpon>UC_XuHuongCongViec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="HOTROTIMVIECDataSet.xsc">
+      <DependentUpon>HOTROTIMVIECDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HOTROTIMVIECDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HOTROTIMVIECDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HOTROTIMVIECDataSet.xss">
+      <DependentUpon>HOTROTIMVIECDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HTTV.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>HTTV.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HTTV.dbml.layout">
+      <DependentUpon>HTTV.dbml</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\An.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DangXuatBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DangXuatWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LamMoi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MatKhauDung.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MatKhauSai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\More.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QuanLy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TaiSuDung.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TraCuu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Xoa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DVTD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NLD.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
